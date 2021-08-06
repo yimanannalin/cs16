@@ -48,9 +48,11 @@ string pointToString(Point p, int precision) {
 
 string boxToString(Box b, int precision) {
   
-  // SAMPLE FORMAT: [ul=(3.4,-5),w=5,h=7] (without the []s)
+    ostringstream oss;
+    oss << setprecision(precision);
+    oss << "(" << b.ul.x << "," << b.ul.y << "," << b.width << "," << b.height << ")";
   
-  return "stub!"; // TODO: Delete this line and comment and replace with appropriate code
+  return oss.str();
 }
  
 

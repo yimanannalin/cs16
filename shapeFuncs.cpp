@@ -50,7 +50,7 @@ string boxToString(Box b, int precision) {
   
     ostringstream oss;
     oss << setprecision(precision);
-    oss << "(" << b.ul.x << "," << b.ul.y << "," << b.width << "," << b.height << ")";
+    oss << "ul=(" << b.ul.x << "," << b.ul.y << "),w=" << b.width << ",h=" << b.height;
   
   return oss.str();
 }

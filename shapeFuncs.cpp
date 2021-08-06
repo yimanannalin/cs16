@@ -55,37 +55,19 @@ string boxToString(Box b, int precision) {
  
 
 
-bool pointsApproxEqual(Point p1, 
-		       Point p2, 
-		       double tolerance) {
-  // Two points are approximately equal if the distance between them
-  // is less than our tolerance.  (If we want to test for 
-  // exact equality, we can pass in a value of zero.)
-
+bool pointsApproxEqual(Point p1, Point p2, double tolerance) {
   return distanceBetween(p1,p2) < tolerance;
 
 }
 
 bool boxesApproxEqual(Box b1, Box b2, double tolerance) {
 
-  // Two boxes are approximately equal if their upper left corners are approximately 
-  // equal, and if their corresponding widths and height are approx equal.
-
-  // Remember: to test whether double values a and b are approximately equal, you need:
-  //   fabs(a - b) < tol
-  // Don't use a==b since this doesn't take tolerance into account.
-  // You'll need to use this technique for width and height
- 
-  // You may find it helpful to abstract out an "approxEqual" function that takes
-  // two parameters of type "double".  Put the prototype in your utility.h 
-  // and the definition in your utility.cpp file.
-
     if(pointsApproxEqual(b1.ul,b2.ul,tolerance)) {
         if (approxequal(b1.width,b2.width, tolerance) && approxequal(b1.height,b2.height, tolerance)) {
             return 1; //return true
         }
     }
-    return 0; // otherwise, return false
+    return 0; //return false
 }
 
 
@@ -100,7 +82,12 @@ bool boxesApproxEqual(Box b1, Box b2, double tolerance) {
 
 void initBox(struct Box *b, double ulx, double uly, double w, double h)
 {
-  return; // @@@ For a void function a "naked return" is a "do nothing" stub
+    (*b).ul.x = ulx;
+    (*b).ul.y = uly;
+    (*b).width = w;
+    (*b).height = h;
+    
+  return;
 }
 
 

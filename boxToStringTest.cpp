@@ -7,17 +7,15 @@
 
 int main() {
 
-    struct Box b1,b2;
+    struct Box b1;
 
-    initBox(&b1,3.0,4.0,5.0,6.0);
-    assertEquals("(3,4,5,6)", boxToString(b1), "pointToString(b1)");
-
-    initBox(&b2,3.14159,6.2831853071,3.45424,6.3214);
-  assertEquals("(3.14,6.28,3.45,6.32)", boxToString(b2), "boxToString(b2)");
-  assertEquals("(3,6,3,6)", boxToString(b2,1), "pointToString(b2,1)");
-  assertEquals("(3.142,6.283,3.454,6.321)", boxToString(b2,4), "boxToString(b2,4)");
-  assertEquals("(3.1416,6.2832,3.4542,6.3214)", boxToString(b2,5), "boxToString(b2,5)");
-
+    initBox(&b1,3.1413439,6.2831853071,3.42235424,6.32243214);
+    assertEquals("(3,6,3,6)", boxToString(b1,1), "boxToString(b1,1)");
+    assertEquals("(3.1,6.3,3.4,6.3)", boxToString(b1,2), "boxToString(b1,2)");
+    assertEquals("(3.14,6.28,3.42,6.32)", boxToString(b1,3), "boxToString(b1,3)");
+    assertEquals("(3.141,6.283,3.422,6.322)", boxToString(b1,4), "boxToString(b1,4)");
+    assertEquals("(3.1413,6.2832,3.4224,6.3224)", boxToString(b1,5), "boxToString(b1,5)");
+    assertEquals("(3.14134,6.28319,3.42235,6.32243)", boxToString(b1,6), "boxToString(b1,6)");
 		   
   return 0;
 }
